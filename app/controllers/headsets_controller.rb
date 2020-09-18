@@ -38,6 +38,11 @@ class HeadsetsController < ApplicationController
     redirect_to headset_path(headset)
   end
 
+  def delete
+    find_headset().delete
+    redirect_to headsets_path
+  end
+
   private
 
   def find_headset

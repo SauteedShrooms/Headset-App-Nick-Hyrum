@@ -14,7 +14,7 @@ class HeadsetsController < ApplicationController
     headset = Headset.create(
               name: params[:headset][:name],
               brand: params[:headset][:brand],
-              color: params[:headset][:color]
+              color: params[:headset][:color],
               price: params[:headset][:price]
               )
     redirect_to headset_path(headset)

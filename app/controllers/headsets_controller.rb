@@ -1,5 +1,7 @@
 class HeadsetsController < ApplicationController
 
+  # before_action :find_headset, only: [:show, :edit]
+
   def index
     @headsets = Headset.all
   end
@@ -9,20 +11,32 @@ class HeadsetsController < ApplicationController
   end
 
   def create
+    
     @headset = Headset.create
   end
 
   def show
-    @headset = Headset.find(params["id"])
+    @headset = find_headset()
   end
 
   def edit
-    @headset = Headset.find(params["id"])
+    @headset = find_headset()
   end
 
   def update
-    @headset = Headset.find(params["id"])
-    @headset.update(name: , brand: , color: , price: )
+    headset = find_headset()
+    headset.update(name: params[:headset][:name],
+                    brand: params[:headset][:brand],
+                    color: params[:headset][:color],
+                    price: params[:headset][:price]
+    )
+    redirect_to headset_path(headset)
+  end
+
+  private
+
+  def find_headset
+    Headset.find(params["id"])
   end
 
 end

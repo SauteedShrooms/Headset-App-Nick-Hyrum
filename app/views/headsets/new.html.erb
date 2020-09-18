@@ -1,0 +1,11 @@
+<%= form_for @headset do |f| %>
+<%= f.label "Name" %><br>
+<%= f.text_field :name %><br><br>
+<%= f.label "Brand" %><br>
+<%= f.text_field :brand %><br><br>
+<%= f.label "Color" %><br>
+<%= f.text_field :color %><br><br>
+<%= f.label "Price" %><br>
+<%= f.number_field :price %><br><br>
+<%= f.submit "Create Headset" %>
+<% end %>

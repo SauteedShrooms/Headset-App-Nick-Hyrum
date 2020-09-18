@@ -4,5 +4,7 @@
 <ul>
   <% @headsets.each do |headset| %>
     <li> <%= link_to headset.name, headset_path(headset) %> </li> 
-  <% end %>
-<ul>
+  <% end %><br><br><br><br>
+  <%= link_to "Make New", new_headset_path %>
+<ul><br><br>
+

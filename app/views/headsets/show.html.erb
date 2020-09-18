@@ -2,3 +2,6 @@
 <br>
 <h3><%= @headset.name + " - " + @headset.brand + " - " + @headset.color + " - " + @headset.price.to_s %></h3>
 
+<p> <%= link_to "Customize Headset", edit_headset_path(@headset) %></p>
+<p> <%= link_to "Back to Index", headsets_path(@headset) %></p>
+

@@ -3,6 +3,6 @@
 <br>
 <ul>
   <% @headsets.each do |headset| %>
-    <li> <%= headset.name %> </li> 
+    <li> <%= link_to headset.name, headset_path(headset) %> </li> 
   <% end %>
 <ul>
